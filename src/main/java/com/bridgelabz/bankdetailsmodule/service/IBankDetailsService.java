@@ -6,7 +6,7 @@ import com.bridgelabz.bankdetailsmodule.dto.BankDetailsDTO;
 import com.bridgelabz.bankdetailsmodule.model.BankDetailsModel;
 
 public interface IBankDetailsService {
-	BankDetailsModel addBankDetails(BankDetailsDTO bankDetailsDTO, Long adminId, String token);
+	BankDetailsModel addBankDetails(BankDetailsDTO bankDetailsDTO, String token);
 	
 	BankDetailsModel updateBankDetails(BankDetailsDTO bankDetailsDTO, Long id, String token);
 	

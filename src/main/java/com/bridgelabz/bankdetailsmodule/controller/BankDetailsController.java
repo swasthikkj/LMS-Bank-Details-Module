@@ -38,8 +38,8 @@ public class BankDetailsController {
 	 * @Param token and admin id
 	 */
 	@PostMapping("/addBankAccount")
-	public ResponseEntity<Response> addBankDetails(@Valid @RequestBody BankDetailsDTO bankDetailsDTO, @RequestParam Long adminId, @RequestHeader String token) {
-		BankDetailsModel bankDetailsModel = bankDetailsService.addBankDetails(bankDetailsDTO, adminId, token);
+	public ResponseEntity<Response> addBankDetails(@Valid @RequestBody BankDetailsDTO bankDetailsDTO, @RequestHeader String token) {
+		BankDetailsModel bankDetailsModel = bankDetailsService.addBankDetails(bankDetailsDTO, token);
 		Response response = new Response(200, "bank account added successfully", bankDetailsModel);
 		return new ResponseEntity<>(response, HttpStatus.OK);		
 	}

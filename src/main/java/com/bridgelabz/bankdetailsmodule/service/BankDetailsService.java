@@ -32,7 +32,7 @@ public class BankDetailsService implements IBankDetailsService {
 	RestTemplate restTemplate;
 
 	@Override
-	public BankDetailsModel addBankDetails(BankDetailsDTO bankDetailsDTO, Long adminId, String token) {
+	public BankDetailsModel addBankDetails(BankDetailsDTO bankDetailsDTO, String token) {
 		//		Long bankAccountId = tokenUtil.decodeToken(token);
 		//		Optional<AdminModel> isTokenPresent = adminRepository.findById(bankAccountId);
 		//		if (isTokenPresent.isPresent()) {
