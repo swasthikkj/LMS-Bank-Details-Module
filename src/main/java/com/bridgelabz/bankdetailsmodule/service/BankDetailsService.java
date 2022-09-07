@@ -37,7 +37,7 @@ public class BankDetailsService implements IBankDetailsService {
 		//		Optional<AdminModel> isTokenPresent = adminRepository.findById(bankAccountId);
 		//		if (isTokenPresent.isPresent()) {
 		//			Optional<AdminModel> isAdminIdPresent = adminRepository.findById(adminId);
-		boolean isUserPresent = restTemplate.getForObject("http://localhost:8075/bankdetailsmodule/validateuser/" + token, Boolean.class);
+		boolean isUserPresent = restTemplate.getForObject("http://LMS-AdminModule:8069/adminmodule/validateuser/" + token, Boolean.class);
 		if (isUserPresent) {
 			BankDetailsModel model = new BankDetailsModel(bankDetailsDTO);
 			//			if (isAdminIdPresent.isPresent()) {
@@ -58,7 +58,7 @@ public class BankDetailsService implements IBankDetailsService {
 		//		Optional<AdminModel> isTokenPresent = adminRepository.findById(bankAccountId);
 		//		if(isTokenPresent.isPresent()) {
 		//			Optional<AdminModel> admin = adminRepository.findById(id);
-		boolean isUserPresent = restTemplate.getForObject("http://localhost:8075/bankdetailsmodule/validateuser/" + token, Boolean.class);
+		boolean isUserPresent = restTemplate.getForObject("http://LMS-AdminModule:8069/adminmodule/validateuser/" + token, Boolean.class);
 		if (isUserPresent) {
 			Optional<BankDetailsModel> isBankDetailsPresent = bankDetailsRepository.findById(id);
 			//			if(admin.isPresent()) {
@@ -87,7 +87,7 @@ public class BankDetailsService implements IBankDetailsService {
 
 	@Override
 	public Optional<BankDetailsModel> getBankDetailsById(Long id,String token) {
-		boolean isUserPresent = restTemplate.getForObject("http://localhost:8075/bankdetailsmodule/validateuser/" + token, Boolean.class);
+		boolean isUserPresent = restTemplate.getForObject("http://LMS-AdminModule:8069/adminmodule/validateuser/" + token, Boolean.class);
 		if (isUserPresent) {
 			return bankDetailsRepository.findById(id);
 		}
@@ -97,7 +97,7 @@ public class BankDetailsService implements IBankDetailsService {
 	@Override
 	public BankDetailsModel deleteBankDetails(Long id, String token) {
 		//		Long bankAccountId = tokenUtil.decodeToken(token);
-		boolean isUserPresent = restTemplate.getForObject("http://localhost:8075/bankdetailsmodule/validateuser/" + token, Boolean.class);
+		boolean isUserPresent = restTemplate.getForObject("http://LMS-AdminModule:8069/adminmodule/validateuser/" + token, Boolean.class);
 		if (isUserPresent) {
 			Optional<BankDetailsModel> isBankDetailsPresent = bankDetailsRepository.findById(id);
 			if(isBankDetailsPresent.isPresent()) {
